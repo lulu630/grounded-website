@@ -5,14 +5,14 @@
   top: 0;
   left: 0;
   z-index: 1;
-  height: 150px;
+  height: 120px;
   width: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: space-around; */
-  justify-content: center;
-  gap: 13rem;
-
+  justify-content: space-between;
+  gap: 2rem;
+  padding-inline: 8%;
+  white-space: nowrap;
 }
 
 
@@ -48,6 +48,7 @@
   max-width: 700px;
   justify-content: space-between;
   gap: 1.5rem;
+
 }
 
 
@@ -55,7 +56,7 @@
   font-family: "Merchant", serif;
   font-weight: 800;
   color: var(--text-on-dark);
-  font-size: 69px;
+  font-size: 64px;
   text-transform: uppercase
 }
 
@@ -116,7 +117,7 @@
   background-position: center;
 
   color: var(--text-on-dark);
-  padding: 170px 8%;
+  padding: 250px 9% 160px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,9 +132,10 @@
   color: var(--text-on-dark);
   border: 1px solid var(--hero-button);
   border-radius: 14px;
-  padding: 1rem 3rem;
-  font-size: 29px;
+  padding: 0.75em 1.8em;
+  font-size: clamp(18px, 1.5vw, 26px);
   align-self: flex-start;
+  line-height: 1.2;
 
 }
 
@@ -147,19 +149,19 @@
 
 .hero__title{
   font-family: "Merchant";
-  font-size: 35px;
+  font-size: 29px;
 }
 
 
 
 .hero__text{
-  font-size: 35px;
-  line-height: 1.5;
+  font-size: 29px;
+  line-height: 1.6;
 }
 
 
 .hero__content{
-  max-width: 540px;
+  max-width: 430px;
   width: 100%;
   display: flex;
   flex-direction: column;
