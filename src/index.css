@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Merchant';
+  src: url('./assets/fonts/Merchant-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Merchant';
+  src: url('./assets/fonts/Merchant-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lunea Sans';
+  src: url('./assets/fonts/Lunea Sans.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+  --bg: #F0EFEB;
+  --text: #0A0A0A;
+  --text-on-dark: #fdfdff;
+  --titles: #728492;
+  --cards: #fdfdff;
+  --hero-button: #fdfdff;
+  --buttons: #9C4722;
+  --accent: #9C4722;
+
+}
+
+body {
+  font-family: 'Lunea Sans', sans-serif;
+  font-weight: 400;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
