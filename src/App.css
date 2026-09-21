@@ -131,8 +131,8 @@
 .hero__title{
   font-family: "Merchant";
   font-size: 31px;
+  font-weight: 800;
 }
-
 
 
 .hero__text{
@@ -170,25 +170,24 @@
 }
 
 
-
 /* Hero Animation: text dellay */
 
-.hero__line,
+.site-header {
+  animation: navbar-appear 800ms ease-out both;
+}
+
 .hero__title,
 .hero__btn{
+  animation: hero-line-appear 800ms ease-out both;
+}
+
+.hero__line{
   display: block;
   animation: hero-line-appear 800ms ease-out both;
 }
 
 .site-header{
-  animation: hero-line-appear 800ms ease-out both;
-
-}
-
-
-.site-header{
   animation-delay: 0ms;
-
 }
 
 .hero__title{
@@ -212,11 +211,15 @@
   animation-delay: 650ms;
 }
 
+@keyframes navbar-appear {
+  from {
+    opacity: 0;
+  }
 
-
-
-
-
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes hero-line-appear {
   0% {
@@ -229,9 +232,6 @@
     transform: translateY(0);
   }
 }
-
-
-
 
 
 
@@ -255,8 +255,6 @@
   }
 
   .hero__btn {
-    font-size: 20px;
-    padding: 0.5rem 2rem;
     max-width: 100%;
   }
 }
@@ -280,10 +278,6 @@
     font-size: 22px;
   }
 
-  .hero__btn {
-    font-size: 18px;
-    padding: 14px 24px;
-  }
 }
 
 
@@ -298,11 +292,98 @@
 
 
 
-
-
 /*------------ INTRO SECTION ------------ */
 
+ .intro{
+  background-color: var(--bg);
+  padding-block: clamp(48px, 11vw, 96px);
+  padding-inline: clamp(20px, 5vw, 80px);
+  min-height: 60svh;
+
+ }
+
  
+ .intro__text{
+  color: var(--text);
+  font-size: 26px;
+  line-height: 2;
+  text-align: center;
+  max-width: 65ch;
+  margin-inline: auto;
+ }
+
+
+.intro__text + .intro__text {
+  margin-top: clamp(24px, 3vw, 40px);
+}
+
+
+/* Intro Animation: text dellay */
+
+.intro__line{
+  display: block;
+  opacity: 0;
+}
+
+.intro--visible .intro__line{
+  animation: hero-line-appear 800ms ease-out both;
+}
+
+
+.intro--visible .intro__line:nth-child(2){
+  animation-delay: 100ms;
+}
+
+
+.intro--visible .intro__line:nth-child(3){
+  animation-delay: 250ms;
+  
+}
+
+
+.intro--visible .intro__line:nth-child(4){
+  animation-delay: 350ms;
+
+}
+
+
+.intro--visible .intro__text + .intro__text .intro__line:nth-child(1) {
+  animation-delay: 1100ms;
+}
+
+.intro--visible .intro__text + .intro__text .intro__line:nth-child(2) {
+  animation-delay: 1200ms;
+}
+
+.intro--visible .intro__text + .intro__text .intro__line:nth-child(3) {
+  animation-delay: 1300ms;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .intro .intro__line {
+    opacity: 1;
+    animation: none;
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
