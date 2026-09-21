@@ -1,3 +1,4 @@
+import Services from "./Components/Services"
 import Intro from "./Components/Intro"
 import Hero from "./Components/Hero"
 import Navbar from "./Components/Navbar"
@@ -12,6 +13,9 @@ function App() {
       <main>
         <Hero />
         <Intro />
+        <Services />
+
+
 
       </main>
     </>

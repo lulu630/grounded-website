@@ -370,6 +370,42 @@
 }
 
 
+/*------------ SERVICES SECTION ------------ */
+
+.services{
+    background-color: var(--bg);
+    max-width: 1000vw;
+    padding: ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.services__list{
+  font-family: "Merchant";
+  font-size: 60px;
+  color: var(--titles);
+  text-transform: uppercase;
+  max-width: 15ch;
+  line-height: 1.2;
+  font-weight: 200;
+  text-align: center;
+  border-block: 1px solid var(--titles);
+  padding-block: 2rem;
+
+
+}
+
+
+
+
+
+
+
 
 
 
