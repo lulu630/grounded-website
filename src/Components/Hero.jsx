@@ -1,6 +1,4 @@
 
-
-
 function Hero() {
     return(
         <section className="hero" id="home" aria-label="hero">
@@ -11,7 +9,15 @@ function Hero() {
                     </h1>
 
                     <p className="hero__text">
-                        Mindfulnesscoaching for deg som ønsker mindre stress, bedre fokus og mer overskudd.
+                        <span className="hero__line">
+                            Mindfulnesscoaching for deg som {' '}
+                        </span>
+                        <span className="hero__line">
+                            ønsker mindre stress, bedre fokus {' '}
+                        </span>
+                         <span className="hero__line">
+                            og mer overskudd.
+                        </span> 
                     </p>
 
                     <a className="hero__btn" href="#kontakt">Book samtale</a>
