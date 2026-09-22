@@ -1,6 +1,6 @@
 
 
-function ServiceCard( {title, description, href, tags} ) {
+function ServiceCard( {title, description, tags} ) {
     return (
         <article className="card">
             <div className="card__title">
