@@ -15,9 +15,6 @@ function Navbar() {
                     <a className="site-header__link" href="#kontakt">Kontakt</a>
                 </nav>
 
-            
-            
-
         </header>
     )
 }

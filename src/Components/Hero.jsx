@@ -22,9 +22,6 @@ function Hero() {
 
                     <a className="hero__btn" href="#kontakt">Book samtale</a>
                 </div>
-
-
-            
             
         </section>
     )
