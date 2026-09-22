@@ -4,27 +4,26 @@ function Intro() {
     const introRef = useRef(null)
     const [isVisible, setIsVisible] = useState(false)
 
+
     useEffect(() => {
         const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-                setIsVisible(true)
-                observer.disconnect()
-            }
-        },
-
-        { threshold: 0.15 }
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true)
+                    observer.disconnect()
+                }
+            },
+            { threshold: 0.15 }
         )
 
         const section =introRef.current
+        
         if (section) {
             observer.observe(section)
         }
         return () => observer.disconnect()
     },[])
 
-    
-    
     return(
         <section 
         ref={introRef}

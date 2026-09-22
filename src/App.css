@@ -365,8 +365,8 @@
   .intro .intro__line {
     opacity: 1;
     animation: none;
-
   }
+  
 }
 
 
@@ -375,17 +375,16 @@
 .services{
     background-color: var(--bg);
     max-width: 1000vw;
-    padding: ;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
+    padding-bottom: clamp(48px, 11vw, 96px);
+    padding-inline: clamp(20px, 5vw, 80px);
 }
 
 
-.services__list{
+.services__title{
   font-family: "Merchant";
   font-size: 60px;
   color: var(--titles);
@@ -394,15 +393,54 @@
   line-height: 1.2;
   font-weight: 200;
   text-align: center;
-  border-block: 1px solid var(--titles);
   padding-block: 2rem;
-
+  position: relative;
 
 }
 
 
+.services__title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--titles);
+  top: 0;
+  
+}
 
 
+.services__title::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--titles);
+  bottom: 0;
+
+}
+
+.services__title::before,
+.services__title::after {
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 900ms ease-out;
+}
+
+.services__title--visible::before,
+.services__title--visible::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services__title::before,
+  .services__title::after {
+    transform: none;
+    transition: none;
+  }
+}
 
 
 
