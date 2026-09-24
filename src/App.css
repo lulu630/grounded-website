@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
   padding-inline: 8%;
   white-space: nowrap;
 }
@@ -18,7 +17,7 @@
 
 .site-header__link {
     color: var(--text-on-dark);
-    font-size: 29px;
+    font-size: 24px;
     position: relative;
 }
 
@@ -82,7 +81,7 @@
 
   .site-header__link {
     font-size: 20px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
   }
 }
 
@@ -165,7 +164,6 @@
 .hero__btn:hover{
   color: var(--accent);
   background-color: var(--hero-button);
-  border-color: var(--hero-button);
 }
 
 
@@ -185,9 +183,9 @@
   animation: hero-line-appear 800ms ease-out both;
 }
 
-.site-header{
+/* .site-header{
   animation-delay: 0ms;
-}
+} */
 
 .hero__title{
   animation-delay: 200ms;
@@ -385,7 +383,6 @@
 
 .services{
     background-color: var(--bg);
-    max-width: 1000vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -401,8 +398,8 @@
   color: var(--titles);
   text-transform: uppercase;
   max-width: 15ch;
-  line-height: 1.2;
-  font-weight: 200;
+  /* line-height: 1.2; */
+  font-weight: 400;
   text-align: center;
   padding-block: 2rem;
   position: relative;
@@ -470,8 +467,8 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1.5fr;
 
-  margin-top: auto;
-  margin-bottom:112px;
+  /* margin-top: auto; */
+  margin-bottom: 3.5rem;
 
   gap: clamp(20px, 3vw, 48px);
   padding: 40px;
@@ -496,11 +493,13 @@
 
   background: 
   radial-gradient(
-    400px circle at 50% 50%,
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
     rgb(156 71 34 / 14%),
+    /* rgb(114 132 146/ 24%) */
     transparent 60%
   );
 
+  
   opacity: 0;
   transition: opacity 300ms ease;
 
@@ -556,7 +555,6 @@
 
 .card__tags{
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
   min-width: 0;
@@ -568,7 +566,7 @@
 
 
 .card__tag{
-    border: 0.7px solid var(--accent);
+    border: 0.5px  solid var(--accent);
     padding: 6px 15px;
     border-radius: 45px;
     font-family: "Lunea Sans";
@@ -578,11 +576,6 @@
 
 
 .card__link:link {
-  color: var(--text);
-}
-
-
-.card__link:visited {
   color: var(--text);
 }
 
@@ -601,7 +594,6 @@
   
   
   .card{
-    display: grid;
     grid-template-columns: 1fr;
     padding: 35px;
     margin-bottom: 50px;
