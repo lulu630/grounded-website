@@ -390,8 +390,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding-bottom: clamp(48px, 11vw, 96px);
-    padding-inline: clamp(20px, 5vw, 160px); */
     padding-inline: clamp(20px, 5vw, 50px);
 }
 
@@ -460,10 +458,8 @@
 
 .cards-container{
   padding-block: clamp(48px, 11vw, 96px);
-  /* padding-inline: clamp(20px, 1vw, 80px); */
   display: flex;
   flex-direction: column;
-  /* gap: 4rem; */
   width: 100%;
   max-width: 1400px;
   margin-inline: auto;
@@ -558,12 +554,6 @@
 
 
 
-.card__link{
-  /* padding-top: 3rem; why not working? */
-}
-
-
-
 .card__tags{
   display: flex;
   flex-direction: row;
@@ -584,7 +574,6 @@
     font-family: "Lunea Sans";
     color: var(--text);
     font-size: 15px;
-    /* font-weight: 200; */
 }
 
 
@@ -626,17 +615,6 @@
 
 }
 
-/* @media (max-width: 1500px) {
-  .card{
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 35px;
-    margin-bottom: 50px;
-
-  }
-
-
-} */
 
 
 
