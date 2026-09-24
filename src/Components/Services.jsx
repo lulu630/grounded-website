@@ -1,6 +1,7 @@
 import ServiceCard from "./ServiceCard"
 import { useEffect, useRef, useState } from "react"
 
+
 const services = [
     {
         id: "coaching",
@@ -13,7 +14,7 @@ const services = [
         id: "grounded-reset",
         title: "Grounded Reset",
         description: "Et seks ukers program som hjelper deg med å senke skuldrene, finne klarhet og bygge en mer bærekraftig hverdag. Gjennom enkle og praktiske øvelser får du støtte til å skape ro, fokus og bedre tilstedeværelse over tid.",
-        tags: ["6 uker", "Prakriske øvelser", "Varige vaner"]
+        tags: ["6 uker", "Praktiske øvelser", "Varige vaner"]
     },
 
     {
@@ -58,7 +59,7 @@ function Services() {
                 Finn et opplegg som passer din hverdag
             </h2>
             
-            <div className="services__list">
+            <div className="cards-container">
                 {
                     services.map((service) => (
                     <ServiceCard
@@ -69,12 +70,10 @@ function Services() {
                     />
                 ))}
             </div>
-
-
-
         </section>
     )   
 }
+
 
 
 export default Services

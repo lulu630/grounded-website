@@ -1,5 +1,3 @@
-
-
 function ServiceCard( {title, description, tags} ) {
     return (
         <article className="card">
@@ -9,7 +7,7 @@ function ServiceCard( {title, description, tags} ) {
 
             <div className="card__description">
                 <p>{description}</p>
-                <a 
+                <a
                 className="card__link" 
                 href="#"
                 onClick={(event) => event.preventDefault()}
@@ -31,8 +29,6 @@ function ServiceCard( {title, description, tags} ) {
         
     )
 }
-
-
 
 
 export default ServiceCard
