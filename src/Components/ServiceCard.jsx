@@ -10,6 +10,7 @@ function ServiceCard( {title, description, tags} ) {
         card.style.setProperty("--mouse-x", `${x}px`)
         card.style.setProperty("--mouse-y", `${y}px`)
 
+
         /* 
         1) currentTarget — card which event handler is attached to.
         
@@ -20,15 +21,40 @@ function ServiceCard( {title, description, tags} ) {
         4) setProperty stores the coordinates in CSS variables for that specific card.
 
         */
+       
 
+        const horisontal = x / rect.width - 0.5
+        const vertical = y / rect.height - 0.5
+
+        card.style.setProperty("--rotate-x", `${vertical * -5}deg`)
+        card.style.setProperty("--rotate-y", `${horisontal * 5}deg`)
+
+
+        /* 
+        x / rect.width determines the mouse position as a fraction of the card’s width. After subtracting 0.5, we get:
+            - left — -0.5;
+            - center — 0;
+            - right — 0.5.
+        
+        */
 
     }
+
+
+    function handleMouseLeave(event) {
+        const card = event.currentTarget
+        card.style.setProperty("--rotate-x", "0deg")
+        card.style.setProperty("--rotate-y", "0deg")
+    }
+
+
 
 
     return (
         <article 
         className="card"
         onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
         >
 
             <div className="card__title">

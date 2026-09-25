@@ -478,8 +478,8 @@
   isolation: isolate;
   border-radius: 15px;
   line-height: 1.5;
-
-
+  background-color: var(--surface);
+  
 }
 
 
@@ -509,7 +509,26 @@
 
 @media (hover: hover) and (pointer: fine) {
   .card {
-    transition: box-shadow 300ms ease;
+    /* transition: box-shadow 300ms ease; */
+    transform:
+      perspective(1200px)
+      rotateX(var(--rotate-x, 0deg))
+      rotateY(var(--rotate-y, 0deg));
+
+    transition:
+      transform 180ms ease-out,
+      box-shadow 300ms ease;
+
+      
+      /* 
+    
+      1. `perspective` creates a sense of depth.
+      2. `rotateX` tilts the top and bottom edges.
+      3. `rotateY` tilts the left and right edges.
+      4. `transition` smooths the movement and the return to the original position. 
+
+      */
+      
 
   }
 
@@ -577,7 +596,6 @@
       filter 0.3s ease;
       
 }
-
 
 
 .card__tag:hover, .cars__tag:focus-visible {
