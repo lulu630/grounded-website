@@ -22,7 +22,6 @@ function ServiceCard( {title, description, tags} ) {
         */
 
 
-
     }
 
 

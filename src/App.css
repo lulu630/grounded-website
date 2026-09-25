@@ -552,7 +552,6 @@
 }
 
 
-
 .card__tags{
   display: flex;
   justify-content: flex-start;
@@ -561,17 +560,37 @@
   margin-bottom: auto;
   gap: 10px;
 
-
 }
 
 
 .card__tag{
-    border: 0.5px  solid var(--accent);
+    border: 0.5px solid color-mix(in srgb, var(--text) 30%, transparent);    
     padding: 6px 15px;
     border-radius: 45px;
     font-family: "Lunea Sans";
     color: var(--text);
     font-size: 15px;
+
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      filter 0.3s ease;
+      
+}
+
+
+
+.card__tag:hover, .cars__tag:focus-visible {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  /* filter: brightness(1.1); */
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .card__tag:hover, .card__tag:focus-visible {
+    transform: scale(1.05);
+    border-color: var(--accent);
+  }
 }
 
 
