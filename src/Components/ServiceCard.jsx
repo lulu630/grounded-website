@@ -48,8 +48,6 @@ function ServiceCard( {title, description, tags} ) {
     }
 
 
-
-
     return (
         <article 
         className="card"

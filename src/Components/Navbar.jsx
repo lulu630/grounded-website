@@ -1,5 +1,3 @@
-
-
 function Navbar() {
     return (
         <header className="site-header">

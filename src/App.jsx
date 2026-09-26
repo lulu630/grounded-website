@@ -1,3 +1,4 @@
+import Bedrifter from "./Components/Bedrifter"
 import Services from "./Components/Services"
 import Intro from "./Components/Intro"
 import Hero from "./Components/Hero"
@@ -14,6 +15,9 @@ function App() {
         <Hero />
         <Intro />
         <Services />
+        <Bedrifter />
+
+        
 
 
       </main>
