@@ -26,8 +26,8 @@ function ServiceCard( {title, description, tags} ) {
         const horisontal = x / rect.width - 0.5
         const vertical = y / rect.height - 0.5
 
-        card.style.setProperty("--rotate-x", `${vertical * -5}deg`)
         card.style.setProperty("--rotate-y", `${horisontal * 5}deg`)
+        card.style.setProperty("--rotate-x", `${vertical * -5}deg`)
 
 
         /* 

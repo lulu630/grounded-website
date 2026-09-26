@@ -29,7 +29,7 @@
 }
 
 :root{
-  --bg: #F5F5F5;
+  --bg:  #f7f7f7;
   --text: #555555;
   --text-on-dark: #fdfdff;
   --titles: #728492;
@@ -37,7 +37,7 @@
   --hero-button: #fdfdff;
   --buttons: #9C4722;
   --accent: #9C4722;
-  --surface: #f7f7f7;
+  --surface: #F5F5F5;
 
 }
 

@@ -479,7 +479,7 @@
   border-radius: 15px;
   line-height: 1.5;
   background-color: var(--surface);
-  
+
 }
 
 
@@ -587,7 +587,7 @@
     padding: 6px 15px;
     border-radius: 45px;
     font-family: "Lunea Sans";
-    color: var(--text);
+    color: var(--titles);
     font-size: 15px;
 
     transition:
