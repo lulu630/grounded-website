@@ -9,8 +9,8 @@ function Bedrifter() {
             alt="People sitting in a conference room"/>
 
             <div className="bedrifter__content">
-                <h2 className="bedrifter__title">For bedrifter</h2>
-                <div className="bedrifter__details">
+                <h2 className="bedrifter__title bedrifter__title--visible">For bedrifter</h2>
+                <div className="bedrifter__text">
                     <p>
                          Praktiske workshops og programmer som hjelper team med å håndtere stress, styrke fokus og skape en mer bærekraftig arbeidshverdag.
                     </p>
@@ -23,13 +23,12 @@ function Bedrifter() {
                     Les mer
                     </a>
 
-
                     <a 
                     className="bedrifter__btn" 
                     href="#book"
                     onClick={(event) => event.preventDefault()}
                     >
-                    Book samtale
+                    Ta kontakt for tilbud
                     </a>
                 </div>
 
