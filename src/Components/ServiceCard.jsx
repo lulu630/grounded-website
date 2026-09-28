@@ -6,6 +6,7 @@ function ServiceCard( {title, description, tags} ) {
         const rect = card.getBoundingClientRect()
         const x = event.clientX - rect.left
         const y = event.clientY - rect.top
+        
 
         card.style.setProperty("--mouse-x", `${x}px`)
         card.style.setProperty("--mouse-y", `${y}px`)
@@ -58,7 +59,7 @@ function ServiceCard( {title, description, tags} ) {
             <div className="card__title">
                 <h3>{title}</h3>
             </div>
-
+            
             <div className="card__description">
                 <p>{description}</p>
                 <a

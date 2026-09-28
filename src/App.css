@@ -1,3 +1,9 @@
+/*
+- добавить постепенное заполнение кнопок
+- параллакс?
+*/
+
+
 /*------------ HERO SECTION ------------ */
 
 .site-header{
@@ -408,6 +414,7 @@
 
 }
 
+/* Title animaton */
 
 
 .services__title::before{
@@ -418,7 +425,6 @@
   height: 1px;
   background-color: var(--titles);
   top: 0;
-  
 }
 
 
@@ -474,16 +480,17 @@
   margin-bottom: 5rem;
 
   gap: clamp(20px, 3vw, 48px);
-  padding: 40px;
+  padding: 55px 30px;
 
 
   position: relative;
   isolation: isolate;
   border-radius: 15px;
   line-height: 1.5;
-  background-color: var(--surface);
+
 
 }
+
 
 
 .card::before{
@@ -507,8 +514,6 @@
   transition: opacity 300ms ease;
 
 }
-
-
 
 @media (hover: hover) and (pointer: fine) {
   .card {
@@ -545,6 +550,16 @@
 }
 
 
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transform: none;
+    transition: none;
+  }
+
+  .card::before {
+    transition: none;
+  }
+}
 
 .card__title{
   line-height: 3rem;
@@ -571,6 +586,10 @@
   color: var(--text);
   font-size: 20px;
   padding-bottom: 2rem;
+}
+
+.card__link {
+  font-size: 1.2rem;
 }
 
 
@@ -601,14 +620,14 @@
 }
 
 
-.card__tag:hover, .cars__tag:focus-visible {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+.card__tag:hover {
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
   /* filter: brightness(1.1); */
 }
 
 
 @media (prefers-reduced-motion: no-preference) {
-  .card__tag:hover, .card__tag:focus-visible {
+  .card__tag:hover {
     transform: scale(1.05);
     border-color: var(--accent);
   }
@@ -654,12 +673,27 @@
 
 }
 
-
 .bedrifter__img{
   display: block;
   width: 100%;
-  height: clamp(240px, 45vw, 560px);
+  height: clamp(240px, 45vw, 800px);
   object-fit: cover;
+  object-position: 50% 30%;
+  clip-path: url(#imageCurve);
+
+/* 
+  border-radius: 0 0 50% 65% / 0 0 29% 52%;
+    horisontal radius / vertical radius:
+      1. top-left
+      2. top-right
+      3. bottom-right
+      4. bottom-left
+*/
+
+}
+
+.img-wave{
+  position: absolute;
 
 }
 
@@ -668,6 +702,7 @@
   max-width: 1200px;
   margin-inline: auto;
   padding-block: clamp(48px, 6vw, 96px);
+  padding-inline: 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
@@ -746,9 +781,10 @@
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 29px;
   align-items: flex-start;
-
+  /* justify-content: space-between; */
+  
  }
 
 
@@ -756,10 +792,11 @@
   color: var(--accent);
   border: 1px solid var(--accent);
   border-radius: 14px;
-  padding: 0.75em 1.8em;
+  padding: 1rem 1.1rem;
   font-size: clamp(18px, 1.5vw, 26px);
   align-self: flex-start;
   line-height: 1.2;
+  margin-top: 3rem;
 }
 
 
@@ -774,6 +811,8 @@
     font-size: 32px;
     line-height: 1.2;
     padding-block: 20px;
+    justify-self: center;
+    
     
   }
 
@@ -781,8 +820,6 @@
   .bedrifter__content{
     grid-template-columns: 1fr;
     font-size: 20px;
-    padding-inline: clamp(48px, 11vw, 96px);
-
 
   }
 
