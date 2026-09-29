@@ -41,16 +41,6 @@ function Bedrifter() {
                 type: 'lines',
                 autoSplit: true,
 
-                // onSplit(self) {
-                //     return gsap.from(self.lines, {
-                //         y: 24,
-                //         opacity: 0,
-                //         duration: 0.8,
-                //         stagger: 0.1,
-                //         ease: 'power2.out',
-                //     })
-                //     },
-
                 onSplit(self) {
                 const links = contentRef.current.querySelectorAll('.bedrifter__text a')
                 const timeline = gsap.timeline()
