@@ -302,10 +302,9 @@
   background-color: var(--bg);
   padding-block: clamp(48px, 11vw, 96px);
   padding-inline: clamp(20px, 5vw, 80px);
-  min-height: 60svh;
+  min-height: 50svh;
  }
 
- 
  
  .intro__text{
   color: var(--text);
@@ -316,63 +315,12 @@
   margin-inline: auto;
  }
 
-
+ 
 
 .intro__text + .intro__text {
   margin-top: clamp(24px, 3vw, 40px);
 }
 
-
-/* Intro Animation: text delay */
-
-.intro__line{
-  display: block;
-  opacity: 0;
-}
-
-.intro--visible .intro__line{
-  animation: hero-line-appear 800ms ease-out both;
-}
-
-
-.intro--visible .intro__line:nth-child(2){
-  animation-delay: 100ms;
-}
-
-
-.intro--visible .intro__line:nth-child(3){
-  animation-delay: 250ms;
-  
-}
-
-
-.intro--visible .intro__line:nth-child(4){
-  animation-delay: 350ms;
-
-}
-
-
-.intro--visible .intro__text + .intro__text .intro__line:nth-child(1) {
-  animation-delay: 1100ms;
-}
-
-.intro--visible .intro__text + .intro__text .intro__line:nth-child(2) {
-  animation-delay: 1200ms;
-}
-
-.intro--visible .intro__text + .intro__text .intro__line:nth-child(3) {
-  animation-delay: 1300ms;
-}
-
-
-
-@media (prefers-reduced-motion: reduce) {
-  .intro .intro__line {
-    opacity: 1;
-    animation: none;
-  }
-  
-}
 
 @media (max-width: 600px) {
   .intro__text{
@@ -406,7 +354,7 @@
   color: var(--titles);
   text-transform: uppercase;
   max-width: 15ch;
-  /* line-height: 1.2; */
+  line-height: 1.2;
   font-weight: 400;
   text-align: center;
   padding-block: 2rem;
@@ -828,7 +776,6 @@
     line-height: 1.6;
   }
 }
-
 
 
 

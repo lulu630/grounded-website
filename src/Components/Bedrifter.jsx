@@ -1,9 +1,13 @@
 import bedrifter from "../assets/images/bedrifter.jpg"
 import { useEffect, useRef, useState } from "react"
+import { gsap } from "gsap"
+import { SplitText } from "gsap/SplitText" // плагин для сплита, путь внутри пакета
+import { useGSAP } from '@gsap/react'
+gsap.registerPlugin(SplitText, useGSAP) //регистрирует плагин в GSAP, чтобы они работали вместе 
 
 
 function Bedrifter() {
-
+    const contentRef = useRef(null)
     const titleRef = useRef(null)
     const [isVisible, setIsVisible] = useState(false)
     
@@ -20,11 +24,58 @@ function Bedrifter() {
             )
     
             const title = titleRef.current
-    
+
             if (title) {
                 observer.observe(title)
             } return () => observer.disconnect()
+
+            
         },[])
+
+
+        useGSAP(() => {
+            if (!isVisible) return
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+            
+            SplitText.create(contentRef.current.querySelectorAll('.bedrifter__text p '), {
+                type: 'lines',
+                autoSplit: true,
+
+                // onSplit(self) {
+                //     return gsap.from(self.lines, {
+                //         y: 24,
+                //         opacity: 0,
+                //         duration: 0.8,
+                //         stagger: 0.1,
+                //         ease: 'power2.out',
+                //     })
+                //     },
+
+                onSplit(self) {
+                const links = contentRef.current.querySelectorAll('.bedrifter__text a')
+                const timeline = gsap.timeline()
+
+                timeline.from(self.lines, {
+                    y: 24,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: 'power2.out',
+                })
+
+                timeline.from(links, {
+                    y: 16,
+                    opacity: 0,
+                    duration: 0.6,
+                    stagger: 0.15,
+                    ease: 'power2.out',
+                })
+
+                return timeline
+                },}
+            )
+                }, { dependencies: [isVisible], scope: contentRef, revertOnUpdate: true })
+
 
 
 
@@ -51,7 +102,9 @@ function Bedrifter() {
                 </defs>
             </svg>
 
-            <div className="bedrifter__content">
+            <div 
+            ref={contentRef}
+            className="bedrifter__content">
                 <h2 ref={titleRef} className={`bedrifter__title${isVisible ? ' bedrifter__title--visible' : ''}`}
             
                 >
