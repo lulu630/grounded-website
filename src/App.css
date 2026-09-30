@@ -1,6 +1,7 @@
 /*
 - добавить постепенное заполнение кнопок
 - параллакс?
+- trusted by-section 🤔
 */
 
 
@@ -688,8 +689,8 @@
  .bedrifter__text{
   font-family: "Lunea Sans";
   color: var(--text);
-  font-size: 24px;
-  line-height: 1.5;
+  font-size: 22px;
+  line-height: 1.6;
   text-align: start;
   max-width: 65ch;
   margin-inline: auto;
@@ -707,7 +708,7 @@
   border: 1px solid var(--accent);
   border-radius: 14px;
   padding: 1rem 1.1rem;
-  font-size: clamp(18px, 1.5vw, 26px);
+  font-size: clamp(18px, 1.1vw, 26px);
   align-self: flex-start;
   line-height: 1.2;
   margin-top: 3rem;
@@ -742,6 +743,96 @@
     line-height: 1.6;
   }
 }
+
+
+/*------------ ABOUT SECTION ------------ */
+
+.about{
+  background-color: var(--bg);
+  padding-block: clamp(48px, 6vw, 96px);
+  padding-inline: 24px;
+
+}
+
+.about__content{
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin-inline: auto;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+.about__img{
+  display: block;
+  width: 100%;
+  height: auto;
+  
+}
+
+.about__text{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: flex-start;
+  font-size: 22px;
+  line-height: 1.6;
+  
+}
+
+.about__title{
+  text-transform: uppercase;
+  font-family: "Merchant";
+  font-weight: 400;
+  font-size: 60px;
+  color: var(--titles);
+  padding-block: 2rem;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  text-align: center;
+  align-self: center;
+  margin-bottom: 2rem;
+
+}
+
+
+.about__title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--titles);
+  top: 0;
+}
+
+
+.about__title::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--titles);
+  bottom: 0;
+
+}
+
+.about__title::before,
+.about__title::after {
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 900ms ease-out;
+}
+
+.about__title--visible::before,
+.about__title--visible::after {
+  transform: scaleX(1);
+}
+
+
+
 
 
 

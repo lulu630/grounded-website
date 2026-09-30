@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(SplitText, useGSAP) //регистрирует плагин в GSAP, чтобы они работали вместе 
 
 
+
 function Bedrifter() {
     const contentRef = useRef(null)
     const titleRef = useRef(null)
@@ -120,12 +121,11 @@ function Bedrifter() {
                     >
                     Ta kontakt for tilbud
                     </a>
+
                 </div>
 
+
             </div>
-
-
-
         </section>
     )
 
