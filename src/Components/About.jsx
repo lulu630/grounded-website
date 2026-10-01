@@ -10,6 +10,8 @@ gsap.registerPlugin(SplitText, useGSAP)
 function About() {
 
     const titleRef = useRef(null)
+    const contentRef = useRef(null)
+    const sectionRef = useRef(null)
     const [isVisible, setIsVisible] = useState(false)
 
 
@@ -33,43 +35,71 @@ function About() {
         },[])
 
 
-        useGSAP(() => {
-            if (!isVisible) return
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+        // useGSAP(() => {
+        //     if (!isVisible) return
+        //     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
             
-            SplitText.create(titleRef.current.querySelectorAll('.about__text p '), {
-                type: 'lines',
-                autoSplit: true,
+        //     SplitText.create(contentRef.current.querySelectorAll('.about__text p '), {
+        //         type: 'lines',
+        //         autoSplit: true,
 
-                onSplit(self) {
-                const links = titleRef.current.querySelectorAll('.about__text a')
-                const timeline = gsap.timeline()
+        //         onSplit(self) {
+        //         const links = contentRef.current.querySelectorAll('.about__text a')
+        //         const timeline = gsap.timeline()
 
-                timeline.from(self.lines, {
-                    y: 24,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: 'power2.out',
-                })
+        //         timeline.from(self.lines, {
+        //             y: 24,
+        //             opacity: 0,
+        //             duration: 0.8,
+        //             stagger: 0.1,
+        //             ease: 'power2.out',
+        //         })
 
-                timeline.from(links, {
-                    y: 16,
-                    opacity: 0,
-                    duration: 0.6,
-                    stagger: 0.15,
-                    ease: 'power2.out',
-                })
+        //         timeline.from(links, {
+        //             y: 16,
+        //             opacity: 0,
+        //             duration: 0.6,
+        //             stagger: 0.15,
+        //             ease: 'power2.out',
+        //         })
 
-                return timeline
-                },}
-            )
-                }, { dependencies: [isVisible], scope: titleRef, revertOnUpdate: true })
+        //         return timeline
+        //         },}
+        //     )
+        //         }, { dependencies: [isVisible], scope: contentRef, revertOnUpdate: true })
+
+        
+        useGSAP(()=> {
+            if (!isVisible) return
+            if (window.matchMedia("(prefers-reduced-motion:reduce)").matches) return
+
+            const timeline = gsap.timeline({
+                defaults: {
+                    duration: 3,
+                    ease: "power2.inOut",
+                },
+            })
+
+            timeline.to(".about__panel--left", {
+                xPercent: -100,
+            }, 0)
+
+            timeline.to(".about__panel--right", {
+                xPercent: 100
+            }, 0)
+        }, {
+            dependencies: [isVisible],
+            scope: sectionRef,
+            revertOnUpdate: true,
+        })
 
 
 
     return(
-        <section className="about">
+        <section 
+        className="about"
+        ref={sectionRef}
+        >
             <div
             className="about__panel about__panel--left"
             aria-hidden="true"
@@ -80,7 +110,7 @@ function About() {
             />
 
             <div 
-            ref={titleRef}
+            ref={contentRef}
             className="about__content">
                 <img 
                 className="about__img"

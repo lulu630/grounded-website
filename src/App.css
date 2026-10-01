@@ -1,7 +1,7 @@
 /*
 - добавить постепенное заполнение кнопок
 - параллакс?
-- trusted by-section 🤔
+- animated trusted by-section 🤔
 */
 
 
@@ -751,7 +751,40 @@
   background-color: var(--bg);
   padding-block: clamp(48px, 6vw, 96px);
   padding-inline: 24px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 
+}
+
+
+.about__panel{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: var(--bg);
+  z-index: 2;
+
+}
+
+
+.about__panel--left{
+  left: 0;
+
+}
+
+
+.about__panel--right{
+  right: 0;
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .about__panel {
+    display: none;
+  }
 }
 
 .about__content{
@@ -767,8 +800,8 @@
   display: block;
   width: 100%;
   height: auto;
-  
 }
+
 
 .about__text{
   display: flex;
@@ -777,8 +810,8 @@
   align-self: flex-start;
   font-size: 22px;
   line-height: 1.6;
-  
 }
+
 
 .about__title{
   text-transform: uppercase;
@@ -793,7 +826,6 @@
   text-align: center;
   align-self: center;
   margin-bottom: 2rem;
-
 }
 
 
@@ -816,8 +848,8 @@
   height: 1px;
   background-color: var(--titles);
   bottom: 0;
-
 }
+
 
 .about__title::before,
 .about__title::after {
@@ -826,10 +858,12 @@
   transition: transform 900ms ease-out;
 }
 
+
 .about__title--visible::before,
 .about__title--visible::after {
   transform: scaleX(1);
 }
+
 
 
 
