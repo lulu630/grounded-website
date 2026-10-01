@@ -92,12 +92,14 @@ function Bedrifter() {
                     </clipPath>
                 </defs>
             </svg>
+            
 
             <div 
             ref={contentRef}
             className="bedrifter__content">
-                <h2 ref={titleRef} className={`bedrifter__title${isVisible ? ' bedrifter__title--visible' : ''}`}
-            
+                <h2 
+                ref={titleRef} 
+                className={`bedrifter__title${isVisible ? ' bedrifter__title--visible' : ''}`}
                 >
                     For bedrifter
                 </h2>

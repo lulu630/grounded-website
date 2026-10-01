@@ -1,3 +1,4 @@
+import Cta from "./Components/Cta"
 import Bedrifter from "./Components/Bedrifter"
 import Services from "./Components/Services"
 import Intro from "./Components/Intro"
@@ -18,9 +19,9 @@ function App() {
         <Services />
         <Bedrifter />
         <About />
+        <Cta />
 
-        
-
+  
 
       </main>
     </>

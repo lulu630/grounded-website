@@ -1,10 +1,12 @@
 import couch from "../assets/images/couch.jpg"
 import { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
-import { SplitText } from "gsap/SplitText"
 import { useGSAP } from '@gsap/react'
-gsap.registerPlugin(SplitText, useGSAP) 
 
+gsap.registerPlugin(useGSAP)
+
+// import { SplitText } from "gsap/SplitText"
+// gsap.registerPlugin(SplitText, useGSAP) 
 
 
 function About() {
@@ -68,31 +70,46 @@ function About() {
         //     )
         //         }, { dependencies: [isVisible], scope: contentRef, revertOnUpdate: true })
 
-        
-        useGSAP(()=> {
-            if (!isVisible) return
-            if (window.matchMedia("(prefers-reduced-motion:reduce)").matches) return
 
-            const timeline = gsap.timeline({
-                defaults: {
-                    duration: 3,
-                    ease: "power2.inOut",
-                },
+
+        useGSAP(()=> {
+            if (!isVisible) return // без этой строки анимация будет создаваться при первом запуске стр, и повторяться при открытии секции
+
+            const media = gsap.matchMedia()
+
+            media.add({
+                vertical: "(width < 1300px)",
+                horizontal: "(width >= 1300px)",
+                reduceMotion: "(prefers-reduced-motion: reduce)",
+            }, (context) => {
+                const { vertical, reduceMotion } = context.conditions
+                if(reduceMotion) return
+            
+                const direction = vertical ? "yPercent" : "xPercent"
+
+                const timeline = gsap.timeline({
+                    defaults: {
+                        duration: 2, // длительность анимации
+                        ease: "power1.inOut", // https://gsap.com/docs/v3/Eases/
+                    },
+                })
+
+                timeline.to(".about__panel--left", {
+                    [direction]: -100, // от размера самой створки вдоль выбранной оси
+                }, 0)
+
+                timeline.to(".about__panel--right", {
+                    [direction]: 100
+                }, 0)
             })
 
-            timeline.to(".about__panel--left", {
-                xPercent: -100,
-            }, 0)
-
-            timeline.to(".about__panel--right", {
-                xPercent: 100
-            }, 0)
+            return () => media.revert()
+            
         }, {
             dependencies: [isVisible],
-            scope: sectionRef,
-            revertOnUpdate: true,
+            scope: sectionRef, // искать элементы по селекторам только в этой секции
+            revertOnUpdate: true, // перед новым запуском очистить пред. анимацию и восст. исходные знач
         })
-
 
 
     return(
@@ -119,7 +136,9 @@ function About() {
 
                 <div className="about__text">
                 <h2 
-                ref={titleRef} className={`about__title${isVisible ? ' about__title--visible' : ''}`}>Om Grounded</h2>
+                ref={titleRef} 
+                className={`about__title${isVisible ? ' about__title--visible' : ''}`}>Om Grounded
+                </h2>
                 <p>
                     Jeg heter Maria Kowalska og jeg står bak Grounded. Med bakgrunn innen organisasjonspsykologi, lederutvikling og mindfulness hjelper jeg mennesker som lever med høyt tempo og stort ansvar, med å finne mer ro, fokus og balanse i hverdagen.
                 </p>
@@ -128,7 +147,6 @@ function About() {
                     Grounded kombinerer forskningsbasert mindfulness med praktiske verktøy som faktisk fungerer i en travel hverdag.
                 </p>
                     
-
                 <a
                 className="card__link" 
                 href="#"
