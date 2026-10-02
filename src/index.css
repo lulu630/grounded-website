@@ -43,6 +43,7 @@
 
 body {
   font-family: 'Lunea Sans', sans-serif;
+  color: var(--text);
 }
 
 button,
@@ -52,8 +53,10 @@ select {
   font: inherit;
 }
 
-a{
-    text-decoration: none;
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 

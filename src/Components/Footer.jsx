@@ -61,7 +61,7 @@ function Footer() {
                     href="#"
                     onClick={(event) => event.preventDefault()}
                     >
-                        Linkedin
+                        LinkedIn
                         </a>
                     </li>
                     <li>
@@ -78,7 +78,7 @@ function Footer() {
             
 
             <div className="footer__bottom">
-                <p> © 2026 Grounded</p>
+                <p>© 2026 Grounded</p>
 
                 <div className="footer__legal-links">
 

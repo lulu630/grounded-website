@@ -23,7 +23,6 @@ function ServiceCard( {title, description, tags} ) {
 
         */
        
-
         const horisontal = x / rect.width - 0.5
         const vertical = y / rect.height - 0.5
 
