@@ -2,20 +2,15 @@ import couch from "../assets/images/couch.jpg"
 import { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { useGSAP } from '@gsap/react'
-
 gsap.registerPlugin(useGSAP)
 
-// import { SplitText } from "gsap/SplitText"
-// gsap.registerPlugin(SplitText, useGSAP) 
 
 
 function About() {
 
     const titleRef = useRef(null)
-    const contentRef = useRef(null)
     const sectionRef = useRef(null)
     const [isVisible, setIsVisible] = useState(false)
-
 
      useEffect( () => {
             const observer = new IntersectionObserver(
@@ -35,41 +30,6 @@ function About() {
             } return () => observer.disconnect()
 
         },[])
-
-
-        // useGSAP(() => {
-        //     if (!isVisible) return
-        //     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-            
-        //     SplitText.create(contentRef.current.querySelectorAll('.about__text p '), {
-        //         type: 'lines',
-        //         autoSplit: true,
-
-        //         onSplit(self) {
-        //         const links = contentRef.current.querySelectorAll('.about__text a')
-        //         const timeline = gsap.timeline()
-
-        //         timeline.from(self.lines, {
-        //             y: 24,
-        //             opacity: 0,
-        //             duration: 0.8,
-        //             stagger: 0.1,
-        //             ease: 'power2.out',
-        //         })
-
-        //         timeline.from(links, {
-        //             y: 16,
-        //             opacity: 0,
-        //             duration: 0.6,
-        //             stagger: 0.15,
-        //             ease: 'power2.out',
-        //         })
-
-        //         return timeline
-        //         },}
-        //     )
-        //         }, { dependencies: [isVisible], scope: contentRef, revertOnUpdate: true })
-
 
 
         useGSAP(()=> {
@@ -126,9 +86,7 @@ function About() {
             aria-hidden="true"
             />
 
-            <div 
-            ref={contentRef}
-            className="about__content">
+            <div className="about__content">
                 <img 
                 className="about__img"
                 src={couch} 
@@ -137,7 +95,7 @@ function About() {
                 <div className="about__text">
                 <h2 
                 ref={titleRef} 
-                className={`about__title${isVisible ? ' about__title--visible' : ''}`}>Om Grounded
+                className="about__title">Om Grounded
                 </h2>
                 <p>
                     Jeg heter Maria Kowalska og jeg står bak Grounded. Med bakgrunn innen organisasjonspsykologi, lederutvikling og mindfulness hjelper jeg mennesker som lever med høyt tempo og stort ansvar, med å finne mer ro, fokus og balanse i hverdagen.
@@ -154,10 +112,7 @@ function About() {
                 >
                 Les mer
                 </a>
-
-
                 </div>
-
             </div>
             
         </section>

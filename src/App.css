@@ -19,6 +19,7 @@
   justify-content: space-between;
   padding-inline: 8%;
   white-space: nowrap;
+  color: var(--text-on-dark);
 }
 
 
@@ -789,7 +790,6 @@
 }
 
 
-
 .about__content{
   max-width: 1200px;
   display: grid;
@@ -798,6 +798,7 @@
   gap: clamp(32px, 6vw, 80px);
   align-items: start;
 }
+
 
 .about__img{
   display: block;
@@ -854,21 +855,6 @@
   background-color: var(--titles);
   bottom: 0;
 }
-
-
-.about__title::before,
-.about__title::after {
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 900ms ease-out;
-}
-
-
-.about__title--visible::before,
-.about__title--visible::after {
-  transform: scaleX(1);
-}
-
 
 
 @media (width < 1300px) {
