@@ -121,7 +121,9 @@ function Bedrifter() {
                     href="#book"
                     onClick={(event) => event.preventDefault()}
                     >
-                    Ta kontakt for tilbud
+                        <span>
+                            Ta kontakt for tilbud
+                        </span>
                     </a>
 
                 </div>

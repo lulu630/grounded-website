@@ -59,7 +59,11 @@ function Hero() {
                             Mindfulnesscoaching for deg som ønsker mindre stress, bedre fokus og mer overskudd.
                     </p>
 
-                    <a className="hero__btn" href="#kontakt">Book samtale</a>
+                    <a className="hero__btn" href="#kontakt">
+                        <span>
+                            Book samtale → 
+                        </span>
+                    </a>
                 </div>
             
 

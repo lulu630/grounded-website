@@ -83,7 +83,10 @@ function Cta() {
                 href="#book"
                 onClick={(event) => event.preventDefault()}
                 >
-                Book en samtale
+                    <span>
+                        Book en samtale
+                    </span>
+                
                 </a>
 
             </div>
