@@ -4,11 +4,6 @@ A responsive homepage for a fictional mindfulness coaching brand. I designed the
 
 [View the website](https://lulu630.github.io/grounded-website/)
 
-## Screenshot
-
-![Grounded homepage on desktop](docs/images/grounded-desktop.png)
-
-
 ## Features
 
 - Responsive layouts for desktop, tablet, and mobile.
