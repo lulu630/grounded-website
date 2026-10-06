@@ -1,8 +1,6 @@
 /*
-- добавить постепенное заполнение кнопок
-- change nav underline color
 - параллакс?
-- animated trusted by-section 🤔
+- animated trusted by-section? 🤔
 */
 
 
@@ -619,14 +617,26 @@
 
 }
 
+.bedrifter__img-wrap {
+    position: relative;
+    height: clamp(240px, 45vw, 800px);
+    overflow: hidden;
+    clip-path: url(#imageCurve);
+
+
+}
+
+
 .bedrifter__img{
   display: block;
   width: 100%;
-  height: clamp(240px, 45vw, 800px);
+  height: 150%;
+  top: -15%;
+  left: 0;
   object-fit: cover;
   object-position: 50% 30%;
-  clip-path: url(#imageCurve);
-
+  position: absolute;
+   
 /* 
   border-radius: 0 0 50% 65% / 0 0 29% 52%;
     horisontal radius / vertical radius:

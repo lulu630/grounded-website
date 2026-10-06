@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 import { SplitText } from "gsap/SplitText" // плагин для сплита, путь внутри пакета
 import { useGSAP } from '@gsap/react'
-gsap.registerPlugin(SplitText, useGSAP) //регистрирует плагин в GSAP, чтобы они работали вместе 
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger) //регистрирует плагин в GSAP, чтобы они работали вместе 
 
 
 
@@ -11,7 +12,7 @@ function Bedrifter() {
     const contentRef = useRef(null)
     const titleRef = useRef(null)
     const [isVisible, setIsVisible] = useState(false)
-    
+    const imgWrapRef = useRef(null)
     
         useEffect( () => {
             const observer = new IntersectionObserver(
@@ -69,13 +70,40 @@ function Bedrifter() {
 
 
 
+                useGSAP(() => {
+                    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+
+
+                    gsap.fromTo(
+                        ".bedrifter__img",
+                        { yPercent: -20 },
+                        {
+                            yPercent: 20,
+                            ease: "none",
+                            scrollTrigger: {
+                                trigger: imgWrapRef.current,
+                                start: "top bottom",
+                                end: "bottom top",
+                                scrub: true,
+
+                            },
+                        }
+                    )
+                }, { scope: imgWrapRef })
+
 
     return(
         <section className="bedrifter">
-            <img 
-            className="bedrifter__img"
-            src={bedrifter} 
-            alt="People sitting in a conference room"/>
+            <div 
+            className="bedrifter__img-wrap"
+            ref={imgWrapRef}
+            
+            >
+                <img 
+                className="bedrifter__img"
+                src={bedrifter} 
+                alt="People sitting in a conference room"/>
+            </div>
 
             <svg width="0" height="0" className="img-wave" aria-hidden="true">
                 <defs>
@@ -103,6 +131,7 @@ function Bedrifter() {
                 >
                     For bedrifter
                 </h2>
+
                 <div className="bedrifter__text">
                     <p>
                          Praktiske workshops og programmer som hjelper team med å håndtere stress, styrke fokus og skape en mer bærekraftig arbeidshverdag.
