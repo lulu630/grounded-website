@@ -45,6 +45,8 @@ Open the local URL printed in the terminal.
 
 This project covers the homepage UI. Booking, contact, and secondary-page links are demonstration placeholders; no booking service or backend is connected.
 
-## Image credits
+## Credits
 
-Photographs used in this project are sourced from Unsplash+.
+- Photography: Unsplash+.
+- Merchant typeface: [Rajesh Rajput](https://rajputrajesh-448.gumroad.com/).
+- Lunea Sans typeface: [Syauqi Studio](https://www.fontspace.com/syauqi-studio).
