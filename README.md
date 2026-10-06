@@ -1,16 +1,55 @@
-# React + Vite
+# Grounded
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive homepage for a fictional mindfulness coaching brand. I designed the website in Figma and built it with React. The page introduces individual coaching, workplace workshops, and the person behind Grounded, with Norwegian content and scroll animations.
 
-Currently, two official plugins are available:
+[View the website](https://lulu630.github.io/grounded-website/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Screenshot
 
-## React Compiler
+![Grounded homepage on desktop](docs/images/grounded-desktop.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive layouts for desktop, tablet, and mobile.
+- Line-by-line text reveals using GSAP SplitText.
+- A scroll-linked parallax image using ScrollTrigger.
+- Service cards with a cursor-following glow and tilt effect on devices with a mouse.
+- An About section revealed by two sliding panels, with a different opening direction on smaller screens.
+- Reduced-motion alternatives for the main animations.
+
+## Built with
+
+- React and JavaScript
+- CSS with Grid, Flexbox, media queries, and custom properties
+- GSAP, SplitText, ScrollTrigger, and `@gsap/react`
+- Vite and ESLint
+- GitHub Pages for hosting
+
+## Run locally
+
+With Node.js and npm installed:
+
+```bash
+git clone https://github.com/lulu630/grounded-website.git
+cd grounded-website
+npm install
+npm run dev
+```
+
+Open the local URL printed in the terminal.
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create the production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Check the code with ESLint |
+
+## Project scope
+
+This project covers the homepage UI. Booking, contact, and secondary-page links are demonstration placeholders; no booking service or backend is connected.
+
+## Image credits
+
+Photographs used in this project are sourced from Unsplash+.
