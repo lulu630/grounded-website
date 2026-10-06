@@ -39,8 +39,8 @@ function Intro() {
                 return gsap.from(self.lines, {
                     y: 24,
                     opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
+                    duration: 0.9, //за ск сек появл кажд строка
+                    stagger: 0.2, //через ск сек появл след строка
                     ease: 'power2.out',
                 })
                 },

@@ -45,8 +45,8 @@ function Cta() {
                     timeline.from(self.lines, {
                         y: 24,
                         opacity: 0,
-                        duration: 0.8,
-                        stagger: 0.1,
+                        duration: 0.9,
+                        stagger: 0.2,
                         ease: 'power2.out',
                     })
     

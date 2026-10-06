@@ -58,8 +58,8 @@ function Bedrifter() {
                 timeline.from(links, {
                     y: 16,
                     opacity: 0,
-                    duration: 0.6,
-                    stagger: 0.15,
+                    duration: 0.9,
+                    stagger: 0.2,
                     ease: 'power2.out',
                 })
 
