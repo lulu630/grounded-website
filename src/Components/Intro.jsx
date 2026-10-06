@@ -49,8 +49,7 @@ function Intro() {
                 return(
                     <section 
                     ref={introRef}
-                    className={`intro${isVisible ? ' intro--visible' : ''}`}
-                    >
+                    className="intro"                    >
                         <p className="intro__text">
                             Arbeidsdagen kan være over, men hodet fortsetter. Beslutninger, ansvar og neste oppgave følger ofte med videre inn i kvelden, og det blir vanskelig å finne en tydelig overgang mellom prestasjon og pause.
                         </p>

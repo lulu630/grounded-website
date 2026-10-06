@@ -76,9 +76,9 @@ function Bedrifter() {
 
                     gsap.fromTo(
                         ".bedrifter__img",
-                        { yPercent: -20 },
+                        { yPercent: -16 },
                         {
-                            yPercent: 20,
+                            yPercent: 16,
                             ease: "none",
                             scrollTrigger: {
                                 trigger: imgWrapRef.current,
