@@ -1,4 +1,4 @@
-import couch from "../assets/images/couch.jpg"
+import couch from "../assets/images/couch.webp"
 import { useState, useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { useGSAP } from '@gsap/react'

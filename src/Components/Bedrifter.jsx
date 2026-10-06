@@ -1,4 +1,4 @@
-import bedrifter from "../assets/images/bedrifter.jpg"
+import bedrifter from "../assets/images/bedrifter.webp"
 import { useEffect, useRef, useState } from "react"
 import { gsap } from "gsap"
 import { SplitText } from "gsap/SplitText" // плагин для сплита, путь внутри пакета
