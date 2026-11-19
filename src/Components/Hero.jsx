@@ -7,6 +7,7 @@ gsap.registerPlugin(SplitText, useGSAP)
 
 
 function Hero() {
+    
     const heroRef = useRef(null)
 
             useGSAP(() => {

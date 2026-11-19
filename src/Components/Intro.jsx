@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import useIntersectionObserver from "../hooks/useIntersectionObserver"
 import { gsap } from "gsap"
 import { SplitText } from "gsap/SplitText" // плагин для сплита, путь внутри пакета
 import { useGSAP } from '@gsap/react'
@@ -6,27 +6,7 @@ gsap.registerPlugin(SplitText, useGSAP) //регистрирует плагин 
 
 
 function Intro() {
-    const introRef = useRef(null)
-    const [isVisible, setIsVisible] = useState(false)
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true)
-                    observer.disconnect()
-                }
-            },
-            { threshold: 0.15 }
-        )
-
-        const section = introRef.current
-        
-        if (section) {
-            observer.observe(section)
-        }
-        return () => observer.disconnect()
-    },[])
+    const { ref: introRef, isVisible } = useIntersectionObserver(0.15)
 
     useGSAP(() => {
         if (!isVisible) return

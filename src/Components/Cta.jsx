@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from "react"
+import useIntersectionObserver from "../hooks/useIntersectionObserver"
+import { useRef } from "react"
 import { gsap } from "gsap"
 import { SplitText } from "gsap/SplitText" 
 import { useGSAP } from '@gsap/react'
@@ -6,30 +7,10 @@ gsap.registerPlugin(SplitText, useGSAP)
 
 
 function Cta() {
-    const contentRef = useRef(null)
-    const titleRef = useRef(null)
-    const [isVisible, setIsVisible] = useState(false)
 
-    useEffect( () => {
-                const observer = new IntersectionObserver(
-                    ([entry]) => {
-                        if (entry.isIntersecting && entry.intersectionRatio >= 1) {
-                            setIsVisible(true)
-                            observer.disconnect()
-                        }
-                    },
-                    { threshold: 1 }
-                )
-        
-                const title = titleRef.current
-    
-                if (title) {
-                    observer.observe(title)
-                } return () => observer.disconnect()
-    
-            },[])
-    
-    
+    const { ref: titleRef, isVisible } = useIntersectionObserver()
+    const contentRef = useRef(null)
+
             useGSAP(() => {
                 if (!isVisible) return
                 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return

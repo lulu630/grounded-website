@@ -1,5 +1,6 @@
 import couch from "../assets/images/couch.webp"
-import { useState, useRef, useEffect } from "react"
+import useIntersectionObserver from "../hooks/useIntersectionObserver"
+import { useRef } from "react"
 import { gsap } from "gsap"
 import { useGSAP } from '@gsap/react'
 gsap.registerPlugin(useGSAP)
@@ -8,29 +9,8 @@ gsap.registerPlugin(useGSAP)
 
 function About() {
 
-    const titleRef = useRef(null)
+    const { ref: titleRef, isVisible } = useIntersectionObserver()
     const sectionRef = useRef(null)
-    const [isVisible, setIsVisible] = useState(false)
-
-     useEffect( () => {
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 1) {
-                        setIsVisible(true)
-                        observer.disconnect()
-                    }
-                },
-                { threshold: 1 }
-            )
-    
-            const title = titleRef.current
-
-            if (title) {
-                observer.observe(title)
-            } return () => observer.disconnect()
-
-        },[])
-
 
         useGSAP(()=> {
             if (!isVisible) return // без этой строки анимация будет создаваться при первом запуске стр, и повторяться при открытии секции

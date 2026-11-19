@@ -1,5 +1,6 @@
 import bedrifter from "../assets/images/bedrifter.webp"
-import { useEffect, useRef, useState } from "react"
+import useIntersectionObserver from "../hooks/useIntersectionObserver"
+import { useRef } from "react"
 import { gsap } from "gsap"
 import { SplitText } from "gsap/SplitText" // плагин для сплита, путь внутри пакета
 import { useGSAP } from '@gsap/react'
@@ -9,31 +10,10 @@ gsap.registerPlugin(SplitText, useGSAP, ScrollTrigger) //регистрируе�
 
 
 function Bedrifter() {
+
+    const { ref: titleRef, isVisible } = useIntersectionObserver()
     const contentRef = useRef(null)
-    const titleRef = useRef(null)
-    const [isVisible, setIsVisible] = useState(false)
     const imgWrapRef = useRef(null)
-    
-        useEffect( () => {
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 1) {
-                        setIsVisible(true)
-                        observer.disconnect()
-                    }
-                },
-                { threshold: 1 }
-            )
-    
-            const title = titleRef.current
-
-            if (title) {
-                observer.observe(title)
-            } return () => observer.disconnect()
-
-            
-        },[])
-
 
         useGSAP(() => {
             if (!isVisible) return
