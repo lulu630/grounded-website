@@ -49,10 +49,12 @@ function ServiceCard( {title, description, tags} ) {
 
 
     return (
-        <article 
+        <a 
         className="card"
+        href="#"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onClick={(event) => event.preventDefault()}
         >
 
             <div className="card__title">
@@ -61,13 +63,7 @@ function ServiceCard( {title, description, tags} ) {
             
             <div className="card__description">
                 <p>{description}</p>
-                <a
-                className="card__link" 
-                href="#"
-                onClick={(event) => event.preventDefault()}
-                >
-                    Les mer
-                </a>
+                <span className="card__link">Les mer</span>
             </div>
         
             <div className="card__tags">
@@ -76,9 +72,8 @@ function ServiceCard( {title, description, tags} ) {
                         {tag}
                     </span>
                 ))}
-
             </div>
-        </article>
+        </a>
             
         
     )
