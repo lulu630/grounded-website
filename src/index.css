@@ -30,10 +30,12 @@
 
 :root{
   --bg:  #f7f7f7;
+  --footer-bg: #667885;
   --text: #555555;
-  --text-on-dark: #fdfdff;
+  --text-on-dark: #ffffff;
   --titles: #728492;
   --accent: #9C4722;
+  
 }
 
 body {
